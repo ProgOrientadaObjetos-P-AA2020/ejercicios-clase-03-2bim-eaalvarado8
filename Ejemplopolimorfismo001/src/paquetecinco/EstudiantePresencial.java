@@ -3,20 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package paqueteseis;
+package paquetecinco;
 
+/**
+ *
+ * @author USUARIO
+ */
 public class EstudiantePresencial extends Estudiante{
-    /*1.  Declarar
-        numeroCreditos: Entero 
-        costoCredito: Real 
-        */
     int numeroCreditos;
     double costoCredito;
-    public EstudiantePresencial(String n, String a, int nC, double cC){
-        super(n, a);
-        numeroCreditos = nC;
-        costoCredito = cC;
-    }
    
     //  Métodos establecer y calcular para los datos o atributos de la clase
     // 2.  Método establecerNumeroCreditos(numero: Real)
@@ -46,15 +41,5 @@ public class EstudiantePresencial extends Estudiante{
     // 6. Método obtenerCostoCredito() : Real
     public double obtenerCostoCredito(){
         return costoCredito;
-    }
-    
-    public String toString(){
-        String cadenaFinal = String.format("%s", super.toString());
-        cadenaFinal = String.format("%s\n"
-                + "Costo Matricula: %.2f\n",
-                cadenaFinal,
-                matricula);
-        
-        return cadenaFinal;
     }
 }

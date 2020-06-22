@@ -32,8 +32,32 @@ public class Ejecutor {
         // inicio de la solución
         ArrayList<Figura> figuras = new ArrayList<>();
         
+        Cuadrado c1 = new Cuadrado("Cuadrado", 2.4);
+        figuras.add(c1);
+        Cuadrado c2 = new Cuadrado("Cuadrado", 5);
+        figuras.add(c2);
+        Cuadrado c3 = new Cuadrado("Cuadrado", 3.2);
+        figuras.add(c3);
+        Cuadrado c4 = new Cuadrado("Cuadrado", 1.1);
+        figuras.add(c4);
         
+        Rombo r1 = new Rombo("Rombo", 4.3, 5.2);
+        figuras.add(r1);
+        Rombo r2 = new Rombo("Rombo", 2.1, 2.5);
+        figuras.add(r2);
+        Rombo r3 = new Rombo("Rombo", 1, 5);
+        figuras.add(r3);
         
+        Triangulo t1 = new Triangulo("Triangulo", 2, 4);
+        figuras.add(t1);
+        Triangulo t2 = new Triangulo("Triangulo", 4, 4);
+        figuras.add(t2);
+        Triangulo t3 = new Triangulo("Triangulo", 1.5, 2);
+        figuras.add(t3);
+        Triangulo t4 = new Triangulo("Triangulo", 7.1, 3);
+        figuras.add(t4);
+        Triangulo t5 = new Triangulo("Triangulo", 3.7, 8);
+        figuras.add(t5);
         // proceso para comprobar el polimorfismo
         for (int i = 0; i < figuras.size(); i++) {
             // 1.  

@@ -3,7 +3,6 @@ package paqueteseis;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import paquetecuatro.Estudiante;
 
 public class EjecutaEstudiante {
 
@@ -33,8 +32,49 @@ public class EjecutaEstudiante {
         
         // inicio de solución
         
+        System.out.println("Numero de Estudiantes a Ingresar: ");
+        contador = entrada.nextInt();
         
-        
+        for(int i = 0; i < contador; i++){
+            System.out.println("Tipo de Estudiante a ingresar\n"
+                    + "Ingrese (1) para Estudiante Presencial"
+                    + "Ingrese (2) para Estudiante Distancia");
+            tipoEstudiante = entrada.nextInt();
+            entrada.nextLine();
+            System.out.println("Ingrese los nombres del estudiante");
+            nombresEst = entrada.nextLine();
+            System.out.println("Ingrese los apellidos del estudiante");
+            apellidosEst = entrada.nextLine();
+            System.out.println("Ingrese la identificación del estudiante");
+            identificacionEst = entrada.nextLine();
+            System.out.println("Ingrese la edad del estudiante");
+            edadEst = entrada.nextInt();
+            
+            if(tipoEstudiante == 1){
+                System.out.println("Ingrese el número de créditos");
+                numeroCreds = entrada.nextInt();
+                System.out.println("Ingrese el costo de cada créditos");
+                costoCred = entrada.nextDouble();
+                EstudiantePresencial eP = new EstudiantePresencial(nombresEst, 
+                        apellidosEst, numeroCreds, costoCred);
+                
+                eP.establecerIdentificacionEstudiante(identificacionEst);
+                eP.establecerEdadEstudiante(edadEst);
+                estudiantes.add(eP);
+            }
+            
+            if(tipoEstudiante == 2){
+                System.out.println("Ingrese el número de Asignaturas");
+                numeroAsigs = entrada.nextInt();
+                System.out.println("Ingrese el costo de cada Asignatura");
+                costoAsig = entrada.nextDouble();
+                EstudianteDistancia eD = new EstudianteDistancia(nombresEst, 
+                        apellidosEst, numeroAsigs, costoAsig);
+                eD.establecerIdentificacionEstudiante(identificacionEst);
+                eD.establecerEdadEstudiante(edadEst);
+                estudiantes.add(eD);
+            }
+        }
         
         
         // ciclo que permite comprobar el polimorfismo

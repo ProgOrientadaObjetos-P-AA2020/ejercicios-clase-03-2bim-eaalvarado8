@@ -3,30 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package paqueteseis;
+package paquetecinco;
 
+/**
+ *
+ * @author USUARIO
+ */
 public abstract class Estudiante {
-    /*
-        1.  Declarar
-        // se declaran datos o atributos con visibilidad protegido,
-        // para que se puedan manipular por las clases derivadas
-        # nombresEstudiante: Cadena
-        # apellidosEstudiante: Cadena
-        # identificacionEstudiante: Cadena
-        # edadEstudiante: Entero
-        # matricula: Real
-        
-    */
+    
     protected String nombresEstudiante;
     protected String apellidosEstudiante;
     protected String identificacionEstudiante;
     protected int edadEstudiante;
     protected double matricula;
     
-    public Estudiante(String nombre, String apellido){
-        nombresEstudiante = nombre;
-        apellidosEstudiante = apellido;
-    }
     // Método establecerNombresEstudiante(nom: Cadena)
     public void establecerNombresEstudiante(String nom){
         nombresEstudiante = nom;
@@ -82,19 +72,5 @@ public abstract class Estudiante {
     */
     public double obtenerMatricula(){
         return matricula;
-    }
-    
-    @Override
-    public String toString(){
-        String cadena = String.format("Nombre: %s\n"
-                + "Apellido: %s\n"
-                + "Identificación: %s\n"
-                + "Edad: %s\n", 
-                nombresEstudiante,
-                apellidosEstudiante,
-                identificacionEstudiante,
-                edadEstudiante);
-        
-        return cadena;
     }
 }

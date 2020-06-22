@@ -3,24 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package paqueteseis;
+package paquetecinco;
 
-public class EstudianteDistancia extends Estudiante {
-    /*1.  Declarar
-        numeroAsignaturas: Entero 
-        costoAsginatura: Real 
-    */ 
-    
+/**
+ *
+ * @author USUARIO
+ */
+public class EstudianteDistancia extends Estudiante{
     int numeroAsignaturas;
     double costoAsignatura;
-    
-    //Creamos el contructor en nuestra subclase, para llenar los datos del 
-    // constructor de nuestra superclase
-    public EstudianteDistancia(String n, String a, int nA, double cA){
-        super(n, a);
-        numeroAsignaturas = nA;
-        costoAsignatura = cA;
-    }
     
     //  Métodos establecer y calcular para los datos o atributos de la clase
     
@@ -35,7 +26,6 @@ public class EstudianteDistancia extends Estudiante {
     }
 
     // 4.  Método calcularMatriculaDistancia()
-    @Override
     public void calcularMatricula(){
         matricula = numeroAsignaturas * costoAsignatura;
     }
@@ -50,16 +40,4 @@ public class EstudianteDistancia extends Estudiante {
     public double obtenerCostoAsignatura(){
         return costoAsignatura;
     }
-    
-    @Override
-    public String toString(){
-        String cadenaFinal = String.format("%s", super.toString());
-        cadenaFinal = String.format("%s\n"
-                + "Costo Matricula: %.2f\n",
-                cadenaFinal,
-                matricula);
-        
-        return cadenaFinal;
-    }
-        
 }
