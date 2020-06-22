@@ -6,6 +6,7 @@
 package paquetesiete;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -30,34 +31,80 @@ public class Ejecutor {
         */
         
         // inicio de la solución
+        Scanner sc = new Scanner(System.in);
         ArrayList<Figura> figuras = new ArrayList<>();
-        
-        Cuadrado c1 = new Cuadrado("Cuadrado", 2.4);
-        figuras.add(c1);
-        Cuadrado c2 = new Cuadrado("Cuadrado", 5);
-        figuras.add(c2);
-        Cuadrado c3 = new Cuadrado("Cuadrado", 3.2);
-        figuras.add(c3);
-        Cuadrado c4 = new Cuadrado("Cuadrado", 1.1);
-        figuras.add(c4);
-        
-        Rombo r1 = new Rombo("Rombo", 4.3, 5.2);
-        figuras.add(r1);
-        Rombo r2 = new Rombo("Rombo", 2.1, 2.5);
-        figuras.add(r2);
-        Rombo r3 = new Rombo("Rombo", 1, 5);
-        figuras.add(r3);
-        
-        Triangulo t1 = new Triangulo("Triangulo", 2, 4);
-        figuras.add(t1);
-        Triangulo t2 = new Triangulo("Triangulo", 4, 4);
-        figuras.add(t2);
-        Triangulo t3 = new Triangulo("Triangulo", 1.5, 2);
-        figuras.add(t3);
-        Triangulo t4 = new Triangulo("Triangulo", 7.1, 3);
-        figuras.add(t4);
-        Triangulo t5 = new Triangulo("Triangulo", 3.7, 8);
-        figuras.add(t5);
+        int cC = 0, cT = 0, cR = 0, cTotal =0;
+        do{
+            if(cC != 4 && cT != 5 && cR !=3){
+                System.out.println("Ingrese tipo de Figura: ");
+                System.out.println("1) Cuadrado");
+                System.out.println("2) Rombo: ");
+                System.out.println("3) Triangulo: "); 
+            }
+            
+            if(cC == 4 && cT != 5 && cR != 3){
+                System.out.println("Ingrese tipo de Figura: ");
+                System.out.println("2) Rombo: ");
+                System.out.println("3) Triangulo: ");  
+            }
+            
+            if(cR == 3 && cT != 5 && cC != 4){
+                System.out.println("Ingrese tipo de Figura: ");
+                System.out.println("1) Cuadrado");
+                System.out.println("3) Triangulo: ");  
+            }
+            
+            if(cT == 5 && cR != 3 && cC != 4){
+                System.out.println("Ingrese tipo de Figura: ");
+                System.out.println("1) Cuadrado");
+                System.out.println("2) Rombo: ");  
+            }
+            
+            if(cR == 3 && cT == 5 && cC != 4){
+                System.out.println("Ingrese tipo de Figura: ");
+                System.out.println("1) Cuadrado");  
+            }
+            
+            if(cC == 4 && cT == 5 && cR != 3){
+                System.out.println("Ingrese tipo de Figura: ");
+                System.out.println("2) Rombo: "); 
+            }
+            
+            if(cR == 3 && cT != 5 && cC == 4){
+                System.out.println("Ingrese tipo de Figura: ");
+                System.out.println("3) Triangulo: ");  
+            }
+            
+            int tipoF = sc.nextInt();
+            if(tipoF == 1 && cC != 4){
+                System.out.println("Ingrese valor del lado: ");
+                double lado = sc.nextDouble();
+                Cuadrado c = new Cuadrado("Cuadrado", lado);
+                figuras.add(c);
+                cC++;
+            }
+
+            if(tipoF == 2 && cR != 3){
+                System.out.println("Ingrese valor de la Diagonal Menor: ");
+                double diagonal_menor = sc.nextDouble();
+                System.out.println("Ingrese valor de la Diagonal Mayor: ");
+                double diagonal_mayor = sc.nextDouble();
+                Rombo r = new Rombo("Rombo", diagonal_menor, diagonal_mayor);
+                figuras.add(r);
+                cR++;
+            }
+
+            if(tipoF == 3 && cT != 5){
+                System.out.println("Ingrese valor de la Base: ");
+                double base = sc.nextDouble();
+                System.out.println("Ingrese valor de la Altura: ");
+                double altura = sc.nextDouble();
+                Triangulo t = new Triangulo("Triangulo", base, altura);
+                figuras.add(t);
+                cT++;
+            }
+            cTotal++;
+         }while(cTotal != 12);
         // proceso para comprobar el polimorfismo
         for (int i = 0; i < figuras.size(); i++) {
             // 1.  
@@ -67,5 +114,6 @@ public class Ejecutor {
                         + "%s\n",                        
                   figuras.get(i));
         }
+       
     }
 }
